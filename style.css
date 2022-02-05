@@ -5,7 +5,7 @@
 }
 
 * {
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
 }
 
 body {
@@ -65,7 +65,16 @@ body {
     width: 100%;
 }
 
+.play-hover.pause {
+    z-index: -1;
+    opacity: 0;
+}
+
 .play-hover {
+    opacity: 100;
+    z-index: 10;
+    cursor: pointer;
+    transition: ease-out 0.3s;
     display: block;
     width: 130px;
     height: 130px;
@@ -86,9 +95,58 @@ body {
 
 .player-controls {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     width: 100%;
     height: 6vh;
     background-color: indigo;
     border: var(--gold) 1px solid;
     border-top: none;
+}
+
+button {
+    border: none;
+    display: block;
+    height: 32px;
+    width: 32px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#progress, #volume {
+    outline: none;
+    -webkit-appearance: none;
+    height: 10px;
+}
+
+#progress::-webkit-slider-thumb,
+#volume::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    -webkit-appearance: none;
+    background-color: violet;
+    border-radius: 50%;
+    cursor: ew-resize;
+
+}
+
+.play-button {
+    background-image: url(assets/svg/play.svg);
+}
+
+.play-button.pause {
+    background-image: url(assets/svg/pause.svg);
+}
+
+#progress {
+    width: 70%;
+}
+
+.mute-button {
+    background-image: url(assets/svg/mute.svg);
+}
+
+#volume {
+    width: 15%;
 }

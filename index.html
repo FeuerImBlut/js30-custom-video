@@ -15,11 +15,18 @@
     </header>
     <section id="video" class="video">
         <div class="video-block">
-            <video class="video-player" src="assets/video/video.mp4">asdasda</video>
-            <div class="player-controls"></div>
-            <button class="play-hover"></button>
+            <video class="video-player" src="assets/video/video.mp4"></video>
+            <div class="player-controls">
+                <button class="play-button" onclick="togglePlay()"></button>
+                <input type="range" name="progress" id="progress">
+                <button class="mute-button"></button>
+                <input type="range" name="volume" id="volume">
+            </div>
+            <button class="play-hover" onclick="togglePlay()"></button>
         </div>
     </section>
+    <footer></footer>
+    <script src="index.js"></script>
 </body>
 
 </html>
