@@ -68,6 +68,7 @@ body {
 .play-hover.pause {
     z-index: -1;
     opacity: 0;
+    /* transition: 0s; */
 }
 
 .play-hover {
@@ -80,10 +81,17 @@ body {
     height: 130px;
     background-image: url(assets/svg/play-btn.svg);
     background-size: contain;
-    background-color: transparent;
+    /* background-color: transparent; */
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
+ 
+}
+
+.play-hover:hover {
+    transition: 1s;
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
 }
 
 .video-player {
@@ -99,7 +107,7 @@ body {
     justify-content: space-around;
     width: 100%;
     height: 6vh;
-    background-color: indigo;
+    background-color: var(--black);
     border: var(--gold) 1px solid;
     border-top: none;
 }
@@ -112,22 +120,37 @@ button {
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    transition: ease-in 0.3s;
+}
+
+button:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+    cursor: pointer;
 }
 
 #progress, #volume {
     outline: none;
     -webkit-appearance: none;
     height: 10px;
+    border-radius: 20px;
+}
+
+#volume {
+    background: linear-gradient( 90deg, var(--gold) 0%, var(--gold) 50%, var(--white) 50%, var(--white) 100%);
 }
 
 #progress::-webkit-slider-thumb,
 #volume::-webkit-slider-thumb {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     -webkit-appearance: none;
-    background-color: violet;
+    background-color: var(--white);
     border-radius: 50%;
     cursor: ew-resize;
+    border: 2px solid var(--gold);
 
 }
 
@@ -144,9 +167,45 @@ button {
 }
 
 .mute-button {
+    background-image: url(assets/svg/volume.svg);
+}
+
+.mute-button.muted {
     background-image: url(assets/svg/mute.svg);
 }
 
 #volume {
     width: 15%;
+}
+
+footer {
+    max-width: 1440px;
+    color: var(--white);
+    display: flex;
+    font-family: Inter;
+    font-size: 20px;
+    margin: 0 auto;
+    padding: 0 20px 0;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: var(--black);
+    height: 100px;
+}
+
+a:hover {
+    color: var(--gold);
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    font: inherit;
+    transition: ease-in 0.3s;
+}
+
+.github {
+    margin-right: auto;
+    padding-left: 10px;
 }

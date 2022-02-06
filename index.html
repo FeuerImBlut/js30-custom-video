@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>JS-30-custom-video-player</title>
 </head>
@@ -18,14 +22,18 @@
             <video class="video-player" src="assets/video/video.mp4"></video>
             <div class="player-controls">
                 <button class="play-button" onclick="togglePlay()"></button>
-                <input type="range" name="progress" id="progress">
+                <input type="range" name="progress" id="progress" value="0">
                 <button class="mute-button"></button>
-                <input type="range" name="volume" id="volume">
+                <input type="range" name="volume" id="volume" value="50">
             </div>
             <button class="play-hover" onclick="togglePlay()"></button>
         </div>
     </section>
-    <footer></footer>
+    <footer>
+        <span>2022 © </span>
+        <a class="github" href="https://github.com/FeuerImBlut">FeuerImBlut</a>
+        <a href="https://rs.school/js-stage0/">Rolling Scopes School</a>
+    </footer>
     <script src="index.js"></script>
 </body>
 
