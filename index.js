@@ -1,5 +1,6 @@
 const video = document.querySelector('.video-player');
 const bigPlayButton = document.querySelector('.play-hover');
+const poster = document.querySelector('.poster');
 const playButton = document.querySelector('.play-button');
 const progress = document.querySelector('#progress');
 const muteButton = document.querySelector('.mute-button');
@@ -12,6 +13,7 @@ const goldColor = getComputedStyle(document.documentElement)
 .getPropertyValue('--gold');
 
 function togglePlay() {
+    poster.classList.add('fade');
     if (video.paused) {
         video.play();
         bigPlayButton.classList.add('pause');
@@ -40,9 +42,7 @@ function updateProgressBar() {
     }
 }
 
-function muteVolume() {
-
-}
+poster.addEventListener('click', togglePlay);
 
 video.addEventListener('click', () => {
     togglePlay();

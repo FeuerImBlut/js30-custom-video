@@ -209,3 +209,20 @@ a {
     margin-right: auto;
     padding-left: 10px;
 }
+
+.poster {
+    height: 710px;
+    background-image: url(assets/img/video-bg.jpg);
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    opacity: 100;
+    transition: ease-in 0.5s;
+    cursor: pointer;
+}
+
+.poster.fade {
+    opacity: 0;
+    z-index: -5;
+    /* display: none; */
+}
